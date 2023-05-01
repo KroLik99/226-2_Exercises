@@ -1,4 +1,5 @@
 package gibb.aufgabe4;
 
-public class Kreis {
+public class Kreis extends Figur{
+    int radius;
 }

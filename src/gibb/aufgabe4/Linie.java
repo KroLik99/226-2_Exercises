@@ -1,4 +1,5 @@
 package gibb.aufgabe4;
 
-public class Linie {
+public class Linie extends Figur{
+    int endX, endY;
 }
