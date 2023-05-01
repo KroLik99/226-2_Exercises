@@ -27,8 +27,15 @@ class Fachangestellter extends Person {
         this.vorgesetzter = vorgesetzter;
     }
 }
+class Firma {
+    private Person[] mitarbeiter;
+    public Firma (Person[] p) {
+        mitarbeiter = p;
+    }
+}
 public class Personen {
     public static void main (String args[]) {
+        /*
         Chef personal3 = new Chef("Sattler", "Beatrice", 234,"Verkauf");
 
 
@@ -42,7 +49,31 @@ public class Personen {
        personal4.vorgesetzter = personal3; //3
         personal1 = personal4; //4
         */
-
+/*
         personal1 = (Fachangestellter) personal4; //*5
+        */
+
+        int[] a = new int[5];
+
+        a[0] = 1;
+        a[1] = 2;
+        a[2] = 3;
+        a[3] = 4;
+        a[4] = 5;
+
+        int[] b = new int[]{
+               1,2,3,4,5
+        };
+
+        Person[] people = new Person[] {
+                new Chef("Sattler", "Beatrice",25, "Verkauf"),
+                new Fachangestellter("","",0,null)
+        };
+
+        Firma f = new Firma(
+                new Person[] {
+                        new Chef("Sattler", "Beatrice",25, "Verkauf")
+                }
+                ); // <==
     }
 }
