@@ -33,7 +33,7 @@ class Chef extends Person {
     @Override
     public void print() { // deklarieren und implementieren, überschreibt print() von der Basisklasse
         super.print();
-        System.out.println(abteilung);
+        System.out.println("Abteilung: " + abteilung);
     }
 
     @Override
@@ -118,7 +118,11 @@ public class Personen {
                 new Fachangestellter("Gross", "Thomasa", 456, chef),
                 new Lernender("Müller", "Max", 12, 3)
         };
-
+        for (Person element: angestellte) {
+            element.print();
+            System.out.println("Der Ferienanspruch beträgt: " + element.berechneFerien(46));
+            System.out.println("--------------------------------");
+        }
 
     }
 }
