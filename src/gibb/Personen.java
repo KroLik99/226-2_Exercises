@@ -2,9 +2,9 @@ package gibb;
 
 
 class Person {
-    private String name;
-    private String vorname;
-    private int personalNummer;
+    protected String name;
+    protected String vorname;
+    protected int personalNummer;
     public Person(String name, String vorname, int personalNummer){
         this.name = name;
         this.vorname = vorname;
@@ -12,7 +12,7 @@ class Person {
     }
 }
 class Chef extends Person {
-    private String abteilung;
+    protected String abteilung;
     public Chef(String name, String vorname, int personalNummer,String abteilung){
         super(name,vorname,personalNummer); // weil Chef von Person erbt muss er alle Instanzvariabeln von Person im Konstruktor haben
         this.abteilung = abteilung;
@@ -28,7 +28,7 @@ class Fachangestellter extends Person {
     }
 }
 class Firma {
-    private Person[] mitarbeiter;
+    public Person[] mitarbeiter;
     public Firma (Person[] p) {
         mitarbeiter = p;
     }
@@ -75,5 +75,10 @@ public class Personen {
                         new Chef("Sattler", "Beatrice",25, "Verkauf")
                 }
                 ); // <==
+
+        System.out.println(f.mitarbeiter[0].name);
+        System.out.println(((Chef) f.mitarbeiter[0]).abteilung);
+        System.out.println(((Chef) people[0]).abteilung); //people[0] wird gecastet und abteilung wird ausgewählt
+
     }
 }

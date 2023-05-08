@@ -1,5 +1,7 @@
 package gibb.aufgabe4;
 
+import gibb.Main;
+
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -66,6 +68,14 @@ public class Display extends JFrame {
       /* TODO: Hier muss f�r jede weitere Figur-Klasse, welche dargestellt werden k�nnen muss,
        * ein analoger Abschnitt, wie f�r die Rechteck-Klasse folgen.
        */
+      if (f instanceof Linie linie) {
+        g.drawLine(linie.getX(), linie.getY(), linie.getEndX(), linie.getEndY());
+      }
+      if (f instanceof Kreis kreis) {
+        int x = kreis.getX() - kreis.getRadius();
+        int y = kreis.getY() - kreis.getRadius();
+        g.drawOval(x, y, kreis.getRadius(), kreis.getRadius());
+      }
     }
   }
 
