@@ -25,4 +25,9 @@ public class Linie extends Figur{
     public void setEndY(int endY) {
         this.endY = endY;
     }
+
+    @Override
+    public double berechneFlaeche() {
+        return 0;
+    }
 }

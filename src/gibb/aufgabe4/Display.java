@@ -76,6 +76,9 @@ public class Display extends JFrame {
         int y = kreis.getY() - kreis.getRadius();
         g.drawOval(x, y, kreis.getRadius(), kreis.getRadius());
       }
+      if (f instanceof RechteckAbgekantet a) {
+        g.drawRect(a.getX(), a.getY(), a.getBreite(), a.getHoehe());
+      }
     }
   }
 

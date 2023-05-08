@@ -1,8 +1,6 @@
 package gibb.aufgabe4;
 
 public class Kreis extends Figur{
-
-
     protected int radius;
 
     public Kreis(int x, int y, int radius) {
@@ -15,5 +13,9 @@ public class Kreis extends Figur{
 
     public void setRadius(int radius) {
         this.radius = radius;
+    }
+    @Override
+    public double berechneFlaeche(){
+        return radius*radius*Math.PI;
     }
 }
