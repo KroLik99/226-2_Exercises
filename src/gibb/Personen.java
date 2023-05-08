@@ -98,8 +98,6 @@ public class Personen {
 
         /*
         Chef personal3 = new Chef("Sattler", "Beatrice", 234,"Verkauf");
-
-
         Fachangestellter personal1 = new Fachangestellter("Klein","Thomas", 123, personal3);
         Fachangestellter personal2 = new Fachangestellter("Gross", "Thomasa", 456, personal3);
         Person personal4 = new Person(null, null, 0);
@@ -113,33 +111,14 @@ public class Personen {
 /*
         personal1 = (Fachangestellter) personal4; //*5
         */
-
-        int[] a = new int[5];
-
-        a[0] = 1;
-        a[1] = 2;
-        a[2] = 3;
-        a[3] = 4;
-        a[4] = 5;
-
-        int[] b = new int[]{
-                1, 2, 3, 4, 5
+        Chef chef = new Chef("Sattler","Beatrice", 234,"Verkauf");
+        Person[] angestellte = new Person[]{
+               chef,
+                new Fachangestellter("Klein","Thomas", 123, chef),
+                new Fachangestellter("Gross", "Thomasa", 456, chef),
+                new Lernender("Müller", "Max", 12, 3)
         };
 
-        Person[] people = new Person[]{
-                new Chef("Sattler", "Beatrice", 25, "Verkauf"),
-                new Fachangestellter("", "", 0, null)
-        };
-
-        Firma f = new Firma(
-                new Person[]{
-                        new Chef("Sattler", "Beatrice", 25, "Verkauf")
-                }
-        ); // <==
-
-        System.out.println(f.mitarbeiter[0].name);
-        System.out.println(((Chef) f.mitarbeiter[0]).abteilung);
-        System.out.println(((Chef) people[0]).abteilung); //people[0] wird gecastet und abteilung wird ausgewählt
 
     }
 }
