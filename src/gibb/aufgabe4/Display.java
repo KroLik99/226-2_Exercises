@@ -23,6 +23,9 @@ import javax.swing.JPanel;
 public class Display extends JFrame {
   /** Die Liste der dargestellten Figur-Objekte */
   private List<Figur> figuren = new ArrayList<Figur>();
+  private Zeichnung zeichnung = new Zeichnung(figuren);
+
+
 
   /**
    * Konstruktor. Initialisiert das Fenster in der Mitte des Bildschirms und erzeugt ein
@@ -50,52 +53,12 @@ public class Display extends JFrame {
       @Override
       protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        zeichneFiguren(g);
+        zeichnung.zeichneFiguren(g);
       }
     });
   }
-
-  /**
-   * Zeichnet alle Figuren.
-   * @param g Referenz auf das Graphics-Objekt zum zeichnen.
-   */
-  private void zeichneFiguren(Graphics g) {
-    for (Figur f : figuren) {
-      if (f instanceof Rechteck) {
-        Rechteck r = (Rechteck)f;
-        g.drawRect(r.getX(), r.getY(), r.getBreite(), r.getHoehe());
-      }
-      /* TODO: Hier muss f�r jede weitere Figur-Klasse, welche dargestellt werden k�nnen muss,
-       * ein analoger Abschnitt, wie f�r die Rechteck-Klasse folgen.
-       */
-      if (f instanceof Linie linie) {
-        g.drawLine(linie.getX(), linie.getY(), linie.getEndX(), linie.getEndY());
-      }
-      if (f instanceof Kreis kreis) {
-        int x = kreis.getX() - kreis.getRadius();
-        int y = kreis.getY() - kreis.getRadius();
-        g.drawOval(x, y, kreis.getRadius(), kreis.getRadius());
-      }
-      if (f instanceof RechteckAbgekantet a) {
-        g.drawRect(a.getX(), a.getY(), a.getBreite(), a.getHoehe());
-      }
-    }
+  public void setZeichnung(Zeichnung zeichnung){
+    this.zeichnung = zeichnung;
   }
 
-  /**
-   * F�gt eine weitere Figur hinzu und l�st die Auffrischung des Fensterinhaltes aus.
-   * @param figur Referenz auf das weitere Figur-Objekt.
-   */
-  public void hinzufuegen(Figur figur) {
-    figuren.add(figur);
-    repaint();
-  }
-
-  /**
-   * L�scht alle Figuren und l�st die Auffrischung des Fensterinhaltes aus.
-   */
-  public void allesLoeschen() {
-    figuren.clear();
-    repaint();
-  }
 }

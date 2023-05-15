@@ -1,5 +1,7 @@
 package gibb.aufgabe4;
 
+import java.awt.*;
+
 public class Kreis extends Figur{
     protected int radius;
 
@@ -17,5 +19,17 @@ public class Kreis extends Figur{
     @Override
     public double berechneFlaeche(){
         return radius*radius*Math.PI;
+    }
+
+    @Override
+    public void strecken(int vergroessern) {
+        this.radius = radius*vergroessern;
+    }
+
+    @Override
+    public void zeichne(Graphics g){
+        int x = getX() - getRadius();
+        int y = getY() - getRadius();
+        g.drawOval(x, y, getRadius(), getRadius());
     }
 }

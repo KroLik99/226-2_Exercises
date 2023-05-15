@@ -1,5 +1,7 @@
 package gibb.aufgabe4;
 
+import java.awt.*;
+
 public abstract class Figur {
     protected int x, y;
 
@@ -16,4 +18,7 @@ public abstract class Figur {
         return this.y;
     }
     public abstract double berechneFlaeche(); //nur deklariert aber nicht implementiert, weil wir nicht wissen welche Figur
+    public abstract void strecken(int vergroessern);
+
+    public abstract void zeichne(Graphics g);
 }

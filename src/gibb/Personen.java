@@ -1,7 +1,7 @@
 package gibb;
 
 
-abstract class Person {
+abstract class Person { //keine Objekte (keine Instanzen) dieser Klasse (Super Class)
     protected String name;
     protected String vorname;
     protected int personalNummer;
@@ -21,7 +21,7 @@ abstract class Person {
     public abstract int berechneFerien(int alter); //deklariert aber nicht implementiert -> abstrakte Klasse und keine Objekte mehr möglich von Person (instanciated)
 }
 
-class Chef extends Person {
+class Chef extends Person { //Subclass
     protected String abteilung;
 
     public Chef(String name, String vorname, int personalNummer, String abteilung) {
@@ -37,7 +37,7 @@ class Chef extends Person {
     }
 
     @Override
-    public int berechneFerien(int alter) {
+    public int berechneFerien(int alter) { //deklarieren und implementieren, überschreibt print() von der Basisklasse
         if(alter < 45){
             return 4;
         } else if (alter>=45 && alter < 55) {
@@ -56,7 +56,7 @@ class Fachangestellter extends Person {
     }
 
     @Override
-    public int berechneFerien(int alter) {
+    public int berechneFerien(int alter) { //deklarieren und implementieren, überschreibt print() von der Basisklasse
         if(alter < 50){
             return 4;
         } else if (alter>=50 && alter < 60) {
@@ -73,7 +73,7 @@ class Lernender extends Person {
         super(name, vorname, personalNummer);
         this.lernjahr = lernjahr;
     }
-@Override
+    @Override
     public void print() { // deklarieren und implementieren, überschreibt print() von der Basisklasse
         super.print();
         System.out.println("Lernjahr: " + this.lernjahr);
@@ -82,7 +82,7 @@ class Lernender extends Person {
     @Override
     public int berechneFerien(int alter) {
         return 5;
-    }
+    } //deklariert und implementiert
 }
 
 class Firma {
@@ -111,15 +111,23 @@ public class Personen {
 /*
         personal1 = (Fachangestellter) personal4; //*5
         */
-        Chef chef = new Chef("Sattler","Beatrice", 234,"Verkauf");
-        Person[] angestellte = new Person[]{
-               chef,
-                new Fachangestellter("Klein","Thomas", 123, chef),
+
+        Person person = new Lernender("lvfkjs","flkjas",0,0);
+        //person variabel ist eine Box wo man die Lernenden hineinfügt
+        person = new Chef("abc", "def", 123, "g");
+
+
+        Chef chef = new Chef("Sattler", "Beatrice", 234, "Verkauf");
+        Person[] angestellte = new Person[]{ //polymorphe Variable: alle Objekte erben von Person
+                chef, //von diesen Klassen werden Objekte erzeugt, weil die von Person erben können die in ein Personenarray hinzugefügt werden
+                new Fachangestellter("Klein", "Thomas", 123, chef),//Instanziieren oder Objekterzeugung
                 new Fachangestellter("Gross", "Thomasa", 456, chef),
                 new Lernender("Müller", "Max", 12, 3)
-        };
-        for (Person element: angestellte) {
-            element.print();
+        }; //personen variable wo das Objekt als Fachangestellter/Chef/L erzeugt wurde angestellte[]
+
+
+        for (Person element : angestellte) { //die elemente des Personenarrays werden durchgegangen
+            element.print(); // print -> von welcher Klasse wurden die Objekte erzeugt und diese Methode ist
             System.out.println("Der Ferienanspruch beträgt: " + element.berechneFerien(46));
             System.out.println("--------------------------------");
         }

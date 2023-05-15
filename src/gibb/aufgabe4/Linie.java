@@ -1,5 +1,7 @@
 package gibb.aufgabe4;
 
+import java.awt.*;
+
 public class Linie extends Figur{
     int endX;
 
@@ -29,5 +31,15 @@ public class Linie extends Figur{
     @Override
     public double berechneFlaeche() {
         return 0;
+    }
+
+    @Override
+    public void strecken(int vergroessern) {
+        this.endX = endX*vergroessern;
+    }
+
+    @Override
+    public void zeichne(Graphics g) {
+        g.drawLine(x, y, getEndX(), getEndY());
     }
 }
