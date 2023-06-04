@@ -1,6 +1,7 @@
 package gibb.aufgabe4;
 
 import java.awt.*;
+import java.io.PrintWriter;
 
 public class Rechteck extends Figur{
     protected int breite;
@@ -40,5 +41,10 @@ public class Rechteck extends Figur{
     @Override
     public void zeichne(Graphics g) {
         g.drawRect(x, y, breite, hoehe);
+    }
+
+    @Override
+    public void save(PrintWriter pw) {
+    pw.println("rechteck, "+x+", "+y+", "+hoehe+", "+breite);
     }
 }

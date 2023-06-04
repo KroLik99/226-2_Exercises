@@ -35,5 +35,5 @@ public abstract class Figur {
     public abstract void strecken(int vergroessern);
 
     public abstract void zeichne(Graphics g);
-    public void save(PrintWriter pw)
+    public abstract void save(PrintWriter pw);
 }

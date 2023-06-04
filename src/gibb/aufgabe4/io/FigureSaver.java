@@ -4,28 +4,31 @@ import gibb.aufgabe4.Figur;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.InaccessibleObjectException;
 import java.util.List;
 
 public class FigureSaver {
     private File file;
-    public void FigurSaver(File f){
+
+    public void FigurSaver(File f) {
         this.file = file;
     }
-    public void save(List<Figur> figuren){
-        try(FileWriter fw = new FileWriter(file)); //allgemein um in ein File zu schreiben
-        PrintWriter pw = new PrintWriter(fileWriter);{
-            for (Figur figur: figuren
-                 ) { Figur.saver(printWriter);
 
+    public void save(List<Figur> figuren) {
+        try (FileWriter fw = new FileWriter(file); //allgemein um in ein File zu schreiben
+             PrintWriter pw = new PrintWriter(fw)) {
+            for (Figur figur : figuren) {
+                figur.save(pw);
             }
-        }catch(IOException e){
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
     }
-    public void saver(Figur f, PrintWriter pw){
+
+    public void saver(Figur f, PrintWriter pw) {
 
     }
 }

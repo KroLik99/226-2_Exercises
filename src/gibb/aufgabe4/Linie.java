@@ -1,6 +1,7 @@
 package gibb.aufgabe4;
 
 import java.awt.*;
+import java.io.PrintWriter;
 
 public class Linie extends Figur{
     int endX;
@@ -42,5 +43,10 @@ public class Linie extends Figur{
     @Override
     public void zeichne(Graphics g) {
         g.drawLine(x, y, getEndX(), getEndY());
+    }
+
+    @Override
+    public void save(PrintWriter pw) {
+    pw.println("linie "+x+", "+y+", "+endX+", "+endY);
     }
 }

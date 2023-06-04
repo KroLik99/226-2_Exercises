@@ -1,6 +1,7 @@
 package gibb.aufgabe4;
 
 import java.awt.*;
+import java.io.PrintWriter;
 
 public class Dreieck extends Figur{
     protected int x1, x2;
@@ -46,5 +47,10 @@ public class Dreieck extends Figur{
         int[] xPunkte = new int[]{x,x1,x2};
         int[] yPunkte = new int[]{y,y1,y2};
         g.drawPolygon(xPunkte,yPunkte,3);
+    }
+
+    @Override
+    public void save(PrintWriter pw) {
+        pw.println("dreieck, " + x + ", " + y + ", " + x1 + ", " + y1 + ", " + x2 + ", " + y2);
     }
 }
