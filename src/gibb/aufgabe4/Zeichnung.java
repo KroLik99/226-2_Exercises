@@ -12,12 +12,11 @@ import java.util.List;
 
 public class Zeichnung { //Hat Figuren
     private List<Figur> figuren; //kennt alle Figuren (Attribut)
-    private Display display; //Macht ein Fenster
 
-    public Zeichnung(Display display) { //Konstruktor
+
+    public Zeichnung() { //Konstruktor
         this.figuren = new ArrayList<>(); //Alle Figuren die es gibt (ist noch leer)
-        this.display = display; //Gibt die Infos für ein Fenster
-        display.setZeichnung(this); //Zeichnung gibt sich an Display weiter
+
     }
 
     //ein Objekt soll alle Aufgaben wahrnehmen wo es alle notwendigen Infos hat -> Delegation an die Figurobjekte
@@ -37,7 +36,7 @@ public class Zeichnung { //Hat Figuren
      */
     public void hinzufuegen(Figur figur) {
         figuren.add(figur);
-        display.repaint();
+        //display.repaint();
     }
 
     /**
@@ -46,7 +45,6 @@ public class Zeichnung { //Hat Figuren
     public void allesLoeschen() {
         figuren.clear();
         //repaint();
-        display.repaint();
     }
     public void save() {
         FigureSaver figurSaver = new FigureSaver(new File("out/save.txt"));
@@ -56,7 +54,7 @@ public class Zeichnung { //Hat Figuren
         FigureLoader figurLoader = new FigureLoader(new File("out/save.txt"));
         figuren = figurLoader.load();
 
-        display.repaint();
+        //display.repaint();
     }
 }
 /*zeichnung.hinzufuegen(new Rechteck(200, 300, 20, 20));

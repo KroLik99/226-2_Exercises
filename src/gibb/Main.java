@@ -1,6 +1,7 @@
 package gibb;
 
 import gibb.aufgabe4.*;
+import gibb.aufgabe4.Editor.EditorFrame;
 
 import java.util.ArrayList;
 
@@ -10,31 +11,9 @@ public class Main {
 
        // Main.display.allesLoeschen();
        // => display.allesLoeschen();
+        EditorFrame frame = new EditorFrame(800, 600); //neues Fenster anstatt Display
 
-        Display display = new Display();
-        Zeichnung zeichnung = new Zeichnung(display);
-        display.setZeichnung(zeichnung);
-        zeichnung.hinzufuegen(new Rechteck(200, 300, 20, 20));
-        zeichnung.hinzufuegen(new Linie(70, 40, 20, 150));
-        zeichnung.hinzufuegen(new Kreis(300, 400, 180));
-        zeichnung.hinzufuegen(new Dreieck(400, 170, 100, 160, 190, 150));
-        testSaveLoad(zeichnung);
-    }
-    private static void testSaveLoad(Zeichnung zeichnung) {
-        zeichnung.save();
-        sleep(1000);
-        System.out.println("CLEAR");
-        zeichnung.allesLoeschen();
-        sleep(1000);
-        System.out.println("LOAD");
-        zeichnung.load();
     }
 
-    private static void sleep(long millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
 }
