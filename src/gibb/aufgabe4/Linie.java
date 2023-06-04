@@ -35,7 +35,8 @@ public class Linie extends Figur{
 
     @Override
     public void strecken(int vergroessern) {
-        this.endX = endX*vergroessern;
+        this.endY = y + (endY-y)*vergroessern;
+        this.endX = x + (endX-x)*vergroessern;
     }
 
     @Override

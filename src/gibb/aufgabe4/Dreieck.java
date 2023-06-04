@@ -15,6 +15,12 @@ public class Dreieck extends Figur{
     }
 
     @Override
+    public void drehen(int drehpunktX, int drehpunktY) {
+        super.drehen(drehpunktX, drehpunktY);
+
+    }
+
+    @Override
     public double berechneFlaeche() {
         return (1.0/2.0)*Math.abs((x1-x)*(y1-y)+(x1-x2)*(y2-y1)+(x2-x)*(y2-y));
     }

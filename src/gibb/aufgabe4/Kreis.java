@@ -16,6 +16,12 @@ public class Kreis extends Figur{
     public void setRadius(int radius) {
         this.radius = radius;
     }
+
+    @Override
+    public void drehen(int drehpunktX, int drehpunktY) {
+
+    }
+
     @Override
     public double berechneFlaeche(){
         return radius*radius*Math.PI;
