@@ -7,10 +7,13 @@ import java.awt.Point;
 
 public class EditorControl {
   private Zeichnung zeichnung;
+  private EditorFrame editorFrame;
   private char figurTyp;
   private Point ersterPunkt;
 
-  public EditorControl(){
+  public EditorControl(EditorFrame editorFrame1){
+    editorFrame=editorFrame1;
+    figurTyp = 'l'; //TODO Tastatureingabe
     zeichnung = new Zeichnung();
     zeichnung.hinzufuegen(new Rechteck(200, 300, 20, 20));
     zeichnung.hinzufuegen(new Linie(70, 40, 20, 150));
@@ -31,7 +34,11 @@ public class EditorControl {
   }
 
   public void erzeugeFigurMitZweitemPunkt(Point zweiterPunkt) {
-    //TODO: Erg�nzen
+    Figur figur = FigurFactory.create2(figurTyp, ersterPunkt, zweiterPunkt);
+    if(figur != null){
+    zeichnung.hinzufuegen(figur);
+    editorFrame.repaint();
+    }
   }
   private static void testSaveLoad(Zeichnung zeichnung) {
     zeichnung.save();

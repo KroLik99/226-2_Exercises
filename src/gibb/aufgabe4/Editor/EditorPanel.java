@@ -10,6 +10,7 @@ public class EditorPanel extends JPanel {
 
   public EditorPanel(EditorControl control) {
     editorControl = control;
+    addMouseListener(new EditorMouseAdapter(editorControl));
   }
 
   // Die paintComponent()-Methode wird automatisch aufgerufen, wenn irgendwer die repaint()-

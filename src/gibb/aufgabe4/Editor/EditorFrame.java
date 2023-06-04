@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class EditorFrame extends JFrame {
-  private EditorControl editorControl = new EditorControl();
+  private EditorControl editorControl = new EditorControl(this);
   
   public EditorFrame(int breite, int hoehe) {
     erzeugeUndSetzeEditorPanel();
