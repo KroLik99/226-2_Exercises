@@ -18,9 +18,23 @@ public class Main {
         zeichnung.hinzufuegen(new Linie(70, 40, 20, 150));
         zeichnung.hinzufuegen(new Kreis(300, 400, 180));
         zeichnung.hinzufuegen(new Dreieck(400, 170, 100, 160, 190, 150));
-
+        testSaveLoad(zeichnung);
     }
-    private void sleep(long millis){
+    private static void testSaveLoad(Zeichnung zeichnung) {
+        zeichnung.save();
+        sleep(1000);
+        System.out.println("CLEAR");
+        zeichnung.allesLoeschen();
+        sleep(1000);
+        System.out.println("LOAD");
+        zeichnung.load();
+    }
 
+    private static void sleep(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -21,11 +21,7 @@ import javax.swing.JPanel;
  */
 @SuppressWarnings("serial")
 public class Display extends JFrame {
-  /** Die Liste der dargestellten Figur-Objekte */
-  private List<Figur> figuren = new ArrayList<Figur>();
-  private Zeichnung zeichnung = new Zeichnung(figuren);
-
-
+  private Zeichnung zeichnung;
 
   /**
    * Konstruktor. Initialisiert das Fenster in der Mitte des Bildschirms und erzeugt ein

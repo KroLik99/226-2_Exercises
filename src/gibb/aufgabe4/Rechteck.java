@@ -3,14 +3,16 @@ package gibb.aufgabe4;
 import java.awt.*;
 import java.io.PrintWriter;
 
-public class Rechteck extends Figur{
+public class Rechteck extends Figur {
     protected int breite;
     protected int hoehe;
-            public Rechteck(int breite, int hoehe, int x, int y) {
-        super(x,y);
+
+    public Rechteck(int x, int y, int breite, int hoehe) {
+        super(x, y);
         this.breite = breite;
         this.hoehe = hoehe;
     }
+
     public void setBreite(int breite) {
         this.breite = breite;
     }
@@ -29,13 +31,13 @@ public class Rechteck extends Figur{
 
     @Override //Methodenüberschreibung
     public double berechneFlaeche() {
-        return breite*hoehe;
+        return breite * hoehe;
     }
 
     @Override
     public void strecken(int vergroessern) {
-        this.breite = breite*vergroessern;
-        this.hoehe = hoehe*vergroessern;
+        this.breite = breite * vergroessern;
+        this.hoehe = hoehe * vergroessern;
     }
 
     @Override
@@ -45,6 +47,6 @@ public class Rechteck extends Figur{
 
     @Override
     public void save(PrintWriter pw) {
-    pw.println("rechteck, "+x+", "+y+", "+hoehe+", "+breite);
-    }
+        pw.println("rechteck, " + x + ", " + y + ", " + breite + ", " + hoehe);
+    } //Reihenfolge vom Konstruktor
 }

@@ -12,9 +12,9 @@ import java.util.List;
 public class FigureSaver {
     private File file;
 
-    public void FigurSaver(File f) {
-        this.file = file;
-    }
+    public FigureSaver(File f) { //Konstruktor
+        this.file = f;
+    } //
 
     public void save(List<Figur> figuren) {
         try (FileWriter fw = new FileWriter(file); //allgemein um in ein File zu schreiben
@@ -25,10 +25,6 @@ public class FigureSaver {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-    }
-
-    public void saver(Figur f, PrintWriter pw) {
 
     }
 }

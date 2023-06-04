@@ -9,17 +9,18 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FigureLoader {
-    private File f;
-    public FigureLoader(File f){
-        this.f = f;
+    private File file;
+    public FigureLoader(File file){
+        this.file = file;
     }
     public List<Figur> load(){
         ArrayList<Figur> figuren = new ArrayList<Figur>();
         try{
-            Scanner scanner = new Scanner(f);
+            Scanner scanner = new Scanner(file);
             while(scanner.hasNext()) { //nextLine
                 String nextline = scanner.nextLine(); //gibt string zurück
-                Figur f = addToArray(nextline);
+                Figur figur = addToArray(nextline);
+                figuren.add(figur);
             }
         } catch (FileNotFoundException e){
             throw new RuntimeException(e); //wie break

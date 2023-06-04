@@ -47,6 +47,6 @@ public class Linie extends Figur{
 
     @Override
     public void save(PrintWriter pw) {
-    pw.println("linie "+x+", "+y+", "+endX+", "+endY);
+    pw.println("linie, "+x+", "+y+", "+endX+", "+endY);
     }
 }
