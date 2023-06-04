@@ -16,6 +16,7 @@ public class EditorFrame extends JFrame {
     fensterEinmitten(breite, hoehe);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setVisible(true);
+    addKeyListener(new EditorKeyAdapter(editorControl));
   }
 
   private void erzeugeUndSetzeEditorPanel() {

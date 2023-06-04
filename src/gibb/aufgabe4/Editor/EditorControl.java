@@ -13,7 +13,7 @@ public class EditorControl {
 
   public EditorControl(EditorFrame editorFrame1){
     editorFrame=editorFrame1;
-    figurTyp = 'l'; //TODO Tastatureingabe
+    //figurTyp = 'l'; //wird von EditorFrame mit EditorKeyAdapter gemacht
     zeichnung = new Zeichnung();
     zeichnung.hinzufuegen(new Rechteck(200, 300, 20, 20));
     zeichnung.hinzufuegen(new Linie(70, 40, 20, 150));
