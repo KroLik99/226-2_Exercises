@@ -1,4 +1,8 @@
 package gibb.aufgabe4.io;
+/**
+ * Scannt ein File ein und gibt die Informationen daraus (Figuryp und Parameter) weiter
+ * in der ArrayList figuren
+ */
 
 import gibb.aufgabe4.*;
 
@@ -17,7 +21,7 @@ public class FigureLoader {
         ArrayList<Figur> figuren = new ArrayList<Figur>();
         try{
             Scanner scanner = new Scanner(file);
-            while(scanner.hasNext()) { //nextLine
+            while(scanner.hasNext()) { //nextLine Java Sprachmittel aus Java-Bibliothek
                 String nextline = scanner.nextLine(); //gibt string zurück
                 Figur figur = addToArray(nextline);
                 figuren.add(figur);

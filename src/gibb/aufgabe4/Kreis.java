@@ -38,7 +38,7 @@ public class Kreis extends Figur {
     public void zeichne(Graphics g) {
         int x = getX() - getRadius();
         int y = getY() - getRadius();
-        g.drawOval(x, y, getRadius(), getRadius());
+        g.drawOval(x, y, getRadius()*2, getRadius()*2);
     }
 
     @Override

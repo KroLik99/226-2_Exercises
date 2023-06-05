@@ -3,7 +3,7 @@ package gibb.aufgabe4.Editor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-// MouseEvents
+// Adapterklasse -> MouseEvents: Konstruktor vom EditorPanel registriert neues Objekt vom EditorMouseAdapter: addMouseListener(new EditorMouseAdapter(editorControl));
 public class EditorMouseAdapter extends MouseAdapter {
     private EditorControl editorControl;
 

@@ -2,7 +2,8 @@ package gibb.aufgabe4;
 
 import java.awt.*;
 
-public class FigurFactory {
+public class FigurFactory { //Nicht mehr die Figur-Objekte selber erzeugen neue Objekte, sondern diese Factory Klasse
+    //create braucht es ür den Figurloader, der die figurenTyp und params aus der Datei  liest und hier wird die Figur gemacht
     public static Figur create(String figurenTyp, int[] numberParams){
         switch (figurenTyp){ //nicht einfach erweiterbar; Figur weiss welche Figur sie ist und kann daher eine neue Figur machen.
             case "dreieck": {

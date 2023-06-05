@@ -50,7 +50,7 @@ public class Zeichnung { //Hat Figuren
         FigureSaver figurSaver = new FigureSaver(new File("out/save.txt"));
         figurSaver.save(figuren);
     }
-    public void load() {
+    public void load() { //Zeichnung löst das laden aus aus der Klasse FigurLoader
         FigureLoader figurLoader = new FigureLoader(new File("out/save.txt"));
         figuren = figurLoader.load();
 

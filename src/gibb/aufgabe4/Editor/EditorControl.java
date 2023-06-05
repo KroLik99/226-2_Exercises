@@ -1,4 +1,7 @@
 package gibb.aufgabe4.Editor;
+/**
+ * Steuert die Zeichnungen. Benötigt editorFrame für das repaint. Man könnte auch das Panel (Zeichnenfläcge) weiterzeichnen
+ */
 
 import gibb.aufgabe4.*;
 
@@ -10,11 +13,11 @@ public class EditorControl {
   private EditorFrame editorFrame;
   private char figurTyp;
   private Point ersterPunkt;
-
+// steuert die Funktionalität des GUI indem es den editorframe event nimmt und die event
   public EditorControl(EditorFrame editorFrame1){
-    editorFrame=editorFrame1;
+    editorFrame=editorFrame1; //der EditorFrame (Fenster) wird zugewiesen zum mitgeteilten editorframe1
     //figurTyp = 'l'; //wird von EditorFrame mit EditorKeyAdapter gemacht
-    zeichnung = new Zeichnung();
+    zeichnung = new Zeichnung(); //Liste von allen Figuren
     zeichnung.hinzufuegen(new Rechteck(200, 300, 20, 20));
     zeichnung.hinzufuegen(new Linie(70, 40, 20, 150));
     zeichnung.hinzufuegen(new Kreis(300, 400, 180));
@@ -25,8 +28,21 @@ public class EditorControl {
     zeichnung.zeichneFiguren(g);
   }
 
-  public void setFigurTyp(char figurTyp) {
+  public void setFigurTyp(char figurTyp) { //Single responsibility ist nur zuständig für die Steuerung der Events -> gibt dann die Funktionalität an die anderen Klassen weiter
     this.figurTyp = figurTyp;
+    //Wenn taste s gedrückt, dann save der zeichnung
+    if(figurTyp == 's'){
+      zeichnung.save();
+      System.out.println("Saved");
+    }
+
+    //Wenn taste o gedrückt, dann load der zeichnung
+    if(figurTyp=='o'){
+      zeichnung.allesLoeschen();
+      zeichnung.load();
+      editorFrame.repaint();
+      System.out.println("loaded");
+    }
   }
 
   public void setErsterPunkt(Point ersterPunkt) {
@@ -34,27 +50,10 @@ public class EditorControl {
   }
 
   public void erzeugeFigurMitZweitemPunkt(Point zweiterPunkt) {
-    Figur figur = FigurFactory.create2(figurTyp, ersterPunkt, zweiterPunkt);
+    Figur figur = FigurFactory.create2(figurTyp, ersterPunkt, zweiterPunkt); //create2 erstellt die gezeichnete Figur
     if(figur != null){
-    zeichnung.hinzufuegen(figur);
-    editorFrame.repaint();
-    }
-  }
-  private static void testSaveLoad(Zeichnung zeichnung) {
-    zeichnung.save();
-    sleep(1000);
-    System.out.println("CLEAR");
-    zeichnung.allesLoeschen();
-    sleep(1000);
-    System.out.println("LOAD");
-    zeichnung.load();
-  }
-
-  private static void sleep(long millis) {
-    try {
-      Thread.sleep(millis);
-    } catch (InterruptedException e) {
-      throw new RuntimeException(e);
+      zeichnung.hinzufuegen(figur);
+      editorFrame.repaint();
     }
   }
 }
