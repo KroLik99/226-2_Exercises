@@ -26,8 +26,6 @@ public class Zeichnung { //Hat Figuren
         }
     }
 
-    public void move(int dx, int dy) {
-    }
 
     /**
      * F�gt eine weitere Figur hinzu und l�st die Auffrischung des Fensterinhaltes aus.

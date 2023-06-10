@@ -20,11 +20,6 @@ public class Kreis extends Figur {
     }
 
     @Override
-    public void drehen(int drehpunktX, int drehpunktY) {
-
-    }
-
-    @Override
     public double berechneFlaeche() {
         return radius * radius * Math.PI;
     }

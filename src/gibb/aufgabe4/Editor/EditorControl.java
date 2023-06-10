@@ -18,10 +18,10 @@ public class EditorControl {
     editorFrame=editorFrame1; //der EditorFrame (Fenster) wird zugewiesen zum mitgeteilten editorframe1
     //figurTyp = 'l'; //wird von EditorFrame mit EditorKeyAdapter gemacht
     zeichnung = new Zeichnung(); //Liste von allen Figuren
-    zeichnung.hinzufuegen(new Rechteck(200, 300, 20, 20));
+    /*zeichnung.hinzufuegen(new Rechteck(200, 300, 20, 20));
     zeichnung.hinzufuegen(new Linie(70, 40, 20, 150));
     zeichnung.hinzufuegen(new Kreis(300, 400, 180));
-    zeichnung.hinzufuegen(new Dreieck(400, 170, 100, 160, 190, 150));
+    zeichnung.hinzufuegen(new Dreieck(400, 170, 100, 160, 190, 150));*/
   }
   public void allesNeuZeichnen(Graphics g) {
     //alle Zeichnungen neu zeichnen
