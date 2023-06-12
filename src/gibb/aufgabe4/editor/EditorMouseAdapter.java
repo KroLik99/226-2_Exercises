@@ -1,4 +1,4 @@
-package gibb.aufgabe4.Editor;
+package gibb.aufgabe4.editor;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

@@ -1,4 +1,4 @@
-package gibb.aufgabe4.Editor;
+package gibb.aufgabe4.editor;
 /**
  * Steuert die Zeichnungen. Benötigt editorFrame für das repaint. Man könnte auch das Panel (Zeichnenfläcge) weiterzeichnen
  */

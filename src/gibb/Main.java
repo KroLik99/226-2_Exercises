@@ -1,9 +1,6 @@
 package gibb;
 
-import gibb.aufgabe4.*;
-import gibb.aufgabe4.Editor.EditorFrame;
-
-import java.util.ArrayList;
+import gibb.aufgabe4.editor.EditorFrame;
 
 public class Main {
 

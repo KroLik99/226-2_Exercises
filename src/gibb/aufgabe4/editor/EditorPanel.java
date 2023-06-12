@@ -1,4 +1,4 @@
-package gibb.aufgabe4.Editor;
+package gibb.aufgabe4.editor;
 /**
  * Kontrolliert die Events und gibt das weiter and EditorControl. Erstellt vom Frame
  */
