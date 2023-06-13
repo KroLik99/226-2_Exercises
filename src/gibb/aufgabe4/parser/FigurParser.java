@@ -1,4 +1,4 @@
-package gibb.aufgabe4.Parser;
+package gibb.aufgabe4.parser;
 
 import gibb.aufgabe4.Figur;
 import gibb.aufgabe4.Kreis;

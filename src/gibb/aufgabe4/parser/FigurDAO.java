@@ -1,6 +1,4 @@
-package gibb.aufgabe4.Parser;
-
-import java.io.IOException;
+package gibb.aufgabe4.parser;
 
 public interface FigurDAO {
     //interface zum Testen und Isolieren der FigurParser Klasse

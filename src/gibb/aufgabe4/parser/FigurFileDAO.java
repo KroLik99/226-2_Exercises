@@ -1,4 +1,4 @@
-package gibb.aufgabe4.Parser;
+package gibb.aufgabe4.parser;
 
 import java.io.BufferedReader;
 import java.io.File;

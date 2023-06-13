@@ -12,6 +12,9 @@ public class FigurDAOStub implements FigurDAO {
 
     @Override
     public String[] readNextFigurData() {
+        if(input.isEmpty()){
+            return null;
+        }
         return input.remove(0); //muss wissen was für ein Datentyp in der Liste ist (Generics)
     }
 }
