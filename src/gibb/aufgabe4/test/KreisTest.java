@@ -26,5 +26,6 @@ public class KreisTest {
 		Mockito.verify(g, Mockito.times(1)).drawOval(60-25,40-25,50,50);
 //Mockito.verify(g, Mockito.times(1)) returns a graphics object: macht alles was Assert macht
 //Kreis Position vom Oval ist oben links und braucht den Durchmesser (breite und höhe)
-    }
+ //stubs braucht es nicht mehr
+   }
 }
