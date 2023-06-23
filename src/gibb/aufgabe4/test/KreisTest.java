@@ -3,6 +3,9 @@ package gibb.aufgabe4.test;
 import gibb.aufgabe4.Kreis;
 import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.Mockito;
+
+import java.awt.*;
 
 public class KreisTest {
     @Test
@@ -11,11 +14,11 @@ public class KreisTest {
         Kreis kreis = new Kreis(60, 40, 25);
         GraphicsStub graphics = new GraphicsStub();
 		// das Gleiche macht Mockito
-		Graphics g = Mockito.mock(Graphics.class); //objekt von Graphics mit Mockito, macht ein g.drawOval() nach 
+		Graphics g = Mockito.mock(Graphics.class); //objekt von Graphics mit Mockito, macht ein g.drawOval() nach
         //When
         kreis.zeichne(graphics);
 // mockito
-		kreis.zeichne(g)
+		kreis.zeichne(g);
         //Then
         Assert.assertEquals(1, graphics.numberOfCalls);
         Assert.assertEquals(60-25, graphics.x);
