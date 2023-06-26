@@ -44,6 +44,8 @@ public class TestZeichnung {
         inOrder.verify(g).drawRect(60, 50, 10, 50);
         inOrder.verify(g).drawLine(60, 50, 10, 50);
         inOrder.verify(g).drawOval(50, 150, 100, 100);
+        Mockito.verify(g, Mockito.times(1)).drawRect(60, 50, 10, 50);
+        Mockito.verify(g, Mockito.times(1)).drawLine(60, 50, 10, 50);  
         Mockito.verify(g, Mockito.times(1)).drawOval(50, 150, 100, 100);
     }
 }
