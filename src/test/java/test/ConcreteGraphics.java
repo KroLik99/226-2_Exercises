@@ -1,4 +1,4 @@
-package gibb.aufgabe4.test;
+package test;
 
 import java.awt.*;
 import java.awt.image.ImageObserver;

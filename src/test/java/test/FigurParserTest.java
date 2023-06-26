@@ -1,12 +1,12 @@
-package gibb.aufgabe4.test;
+package test;
 
 import gibb.aufgabe4.Figur;
 import gibb.aufgabe4.Kreis;
 import gibb.aufgabe4.Linie;
 import gibb.aufgabe4.Rechteck;
 import gibb.aufgabe4.parser.FigurParser;
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -23,13 +23,13 @@ public class FigurParserTest {
         //When
         List<Figur> figuren = parser.parse();
         //Then
-        Assert.assertEquals(1, figuren.size());
-        Assert.assertEquals(true, figuren.get(0) instanceof Rechteck);
+        assertEquals(1, figuren.size());
+        assertEquals(true, figuren.get(0) instanceof Rechteck);
         Rechteck rechteck = (Rechteck) figuren.get(0);
-        Assert.assertEquals(140, rechteck.getX());
-        Assert.assertEquals(200, rechteck.getY());
-        Assert.assertEquals(80, rechteck.getBreite());
-        Assert.assertEquals(67, rechteck.getHoehe());
+        assertEquals(140, rechteck.getX());
+        assertEquals(200, rechteck.getY());
+        assertEquals(80, rechteck.getBreite());
+        assertEquals(67, rechteck.getHoehe());
     }
     @Test
     public void testInputKreis(){
@@ -41,12 +41,12 @@ public class FigurParserTest {
         //When
         List<Figur> figuren = parser.parse();
         //Then
-        Assert.assertEquals(1, figuren.size());
-        Assert.assertEquals(true, figuren.get(0) instanceof Kreis);
+        assertEquals(1, figuren.size());
+        assertEquals(true, figuren.get(0) instanceof Kreis);
         Kreis kreis = (Kreis) figuren.get(0);
-        Assert.assertEquals(50, kreis.getX());
-        Assert.assertEquals(20, kreis.getY());
-        Assert.assertEquals(80, kreis.getRadius());
+        assertEquals(50, kreis.getX());
+        assertEquals(20, kreis.getY());
+        assertEquals(80, kreis.getRadius());
     }
     @Test
     public void testInputLinie(){
@@ -58,13 +58,13 @@ public class FigurParserTest {
         //When
         List<Figur> figuren = parser.parse();
         //Then
-        Assert.assertEquals(1, figuren.size());
-        Assert.assertEquals(true, figuren.get(0) instanceof Linie);
+        assertEquals(1, figuren.size());
+        assertEquals(true, figuren.get(0) instanceof Linie);
         Linie linie = (Linie) figuren.get(0);
-        Assert.assertEquals(50, linie.getX());
-        Assert.assertEquals(20, linie.getY());
-        Assert.assertEquals(80, linie.getEndX());
-        Assert.assertEquals(70, linie.getEndY());
+        assertEquals(50, linie.getX());
+        assertEquals(20, linie.getY());
+        assertEquals(80, linie.getEndX());
+        assertEquals(70, linie.getEndY());
     }
     @Test
     public void testInputAllShapes(){
@@ -78,23 +78,23 @@ public class FigurParserTest {
         //When
         List<Figur> figuren = parser.parse();
         //Then
-        Assert.assertEquals(3, figuren.size());
-        Assert.assertEquals(true, figuren.get(0) instanceof Linie);
-        Assert.assertEquals(true, figuren.get(1) instanceof Kreis);
-        Assert.assertEquals(true, figuren.get(2) instanceof Rechteck);
+        assertEquals(3, figuren.size());
+        assertEquals(true, figuren.get(0) instanceof Linie);
+        assertEquals(true, figuren.get(1) instanceof Kreis);
+        assertEquals(true, figuren.get(2) instanceof Rechteck);
         Linie linie = (Linie) figuren.get(0);
-        Assert.assertEquals(50, linie.getX());
-        Assert.assertEquals(20, linie.getY());
-        Assert.assertEquals(80, linie.getEndX());
-        Assert.assertEquals(70, linie.getEndY());
+        assertEquals(50, linie.getX());
+        assertEquals(20, linie.getY());
+        assertEquals(80, linie.getEndX());
+        assertEquals(70, linie.getEndY());
         Kreis kreis = (Kreis) figuren.get(1);
-        Assert.assertEquals(50, kreis.getX());
-        Assert.assertEquals(20, kreis.getY());
-        Assert.assertEquals(80, kreis.getRadius());
+        assertEquals(50, kreis.getX());
+        assertEquals(20, kreis.getY());
+        assertEquals(80, kreis.getRadius());
         Rechteck rechteck = (Rechteck) figuren.get(2);
-        Assert.assertEquals(140, rechteck.getX());
-        Assert.assertEquals(200, rechteck.getY());
-        Assert.assertEquals(80, rechteck.getBreite());
-        Assert.assertEquals(67, rechteck.getHoehe());
+        assertEquals(140, rechteck.getX());
+        assertEquals(200, rechteck.getY());
+        assertEquals(80, rechteck.getBreite());
+        assertEquals(67, rechteck.getHoehe());
     }
 }

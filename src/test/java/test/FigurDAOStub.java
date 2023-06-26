@@ -1,4 +1,4 @@
-package gibb.aufgabe4.test;
+package test;
 
 import gibb.aufgabe4.parser.FigurDAO;
 

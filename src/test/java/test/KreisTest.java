@@ -1,8 +1,8 @@
-package gibb.aufgabe4.test;
+package test;
 
 import gibb.aufgabe4.Kreis;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.awt.*;
@@ -20,11 +20,11 @@ public class KreisTest {
 // mockito
 		kreis.zeichne(g);
         //Then
-        Assert.assertEquals(1, graphics.numberOfCalls);
-        Assert.assertEquals(60-25, graphics.x);
-        Assert.assertEquals(40-25, graphics.y);
-        Assert.assertEquals(50, graphics.width);
-        Assert.assertEquals(50, graphics.height);
+        Assertions.assertEquals(1, graphics.numberOfCalls);
+        Assertions.assertEquals(60-25, graphics.x);
+        Assertions.assertEquals(40-25, graphics.y);
+        Assertions.assertEquals(50, graphics.width);
+        Assertions.assertEquals(50, graphics.height);
 //mockito
 		Mockito.verify(g, Mockito.times(1)).drawOval(60-25,40-25,50,50);
 //Mockito.verify(g, Mockito.times(1)) returns a graphics object: macht alles was Assert macht

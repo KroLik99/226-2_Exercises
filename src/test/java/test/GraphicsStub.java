@@ -1,4 +1,4 @@
-package gibb.aufgabe4.test;
+package test;
 
 public class GraphicsStub extends ConcreteGraphics{
     int x;
